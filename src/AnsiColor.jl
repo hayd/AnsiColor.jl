@@ -1,7 +1,9 @@
 module AnsiColor
 export colorize, black, red, green, yellow, blue, magenta, cyan, white, uncolor
 
-COLORS = {
+using Compat
+
+COLORS = @compat Dict(
   "black"          => 0,
   "red"            => 1,
   "green"          => 2,
@@ -20,16 +22,16 @@ COLORS = {
   "light_magenta"  => 65,
   "light_cyan"     => 66,
   "light_white"    => 67
-  }
+)
 
-MODES = {
+MODES = @compat Dict(
   "default"        => 0,
   "bold"           => 1,
   "underline"      => 4,
   "blink"          => 5,
   "swap"           => 7,
   "hide"           => 8
-  }
+)
 
 COLOR_OFFSET       = 30
 BACKGROUND_OFFSET  = 40
